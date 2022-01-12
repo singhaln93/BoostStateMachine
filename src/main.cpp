@@ -1,3 +1,9 @@
+/**
+ * @file main.cpp
+ * @author Neeraj Singhal
+ * @date 2021-01-12
+ */
+
 #include "../lib/add.hpp"
 #include <iostream>
 
