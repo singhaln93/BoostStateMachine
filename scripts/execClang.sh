@@ -10,10 +10,11 @@ echo -e $CMAKE_VERSION
 echo -e $CLANG_VERSION
 mkdir -p build.clang && cd build.clang &&
     CXX=clang++ CC=clang
-    cmake -DCMAKE_BUILD_TYPE=Debug .. &&    #-DOPTION=ON(value) set submodule options 
-    make -j4                                # make VERBOSE= 1 for detailed log
+cmake -DCMAKE_BUILD_TYPE=Debug .. && #-DOPTION=ON(value) set submodule options
+    make -j4                         # make VERBOSE= 1 for detailed log
 #clear
 #echo -e "\nTest Results..."
+#ctest
 #./tests
 echo -e "\nOutput..."
 ./BoostStateMachine

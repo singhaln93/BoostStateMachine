@@ -12,14 +12,14 @@ else
     echo -e "Ninja:" $NINJA_VERSION
 fi
 
-
 ### START ###
 cd ..
 mkdir -p build.ninja && cd build.ninja &&
-    cmake -DCMAKE_BUILD_TYPE=Debug .. -G Ninja && 
+    cmake -DCMAKE_BUILD_TYPE=Debug .. -G Ninja &&
     ninja
 #clear
 #echo -e "\nTest Results..."
+#ctest
 #./tests
 echo -e "\nOutput..."
 ./BoostStateMachine
