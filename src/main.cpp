@@ -9,6 +9,6 @@
 
 int main()
 {
-    std::cout << "Sum is: " << Sum2N(5, 7) << std::endl;
-    return 0;
+  std::cout << "Sum is: " << Sum2N(5, 7) << std::endl;//NOLINT[cppcoreguidelines-avoid-magic-numbers]
+  return 0;
 }
