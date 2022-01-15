@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.22)
 # CMAKE_VERSION <major>.<minor>.<date>(YYMMDD) or <patch>
 project(
   BoostStateMachine
-  VERSION 0.0.220112
+  VERSION 0.0.220115
   LANGUAGES CXX)
 message("-- PROJECT = ${CMAKE_PROJECT_NAME} v${CMAKE_PROJECT_VERSION}")
 
@@ -13,6 +13,7 @@ option(DEP_PCKG "Display packages dependent packages used for the project." OFF)
 option(UPDATE_SUBMODULE "Update submodule dependent libs used for the project."
        OFF)
 option(CATCH_TEST "Turn ON/OFF catch test for the project." OFF)
+option(TRACE_LOGS "Turn ON/OFF trace logs" OFF)
 
 # Set the compiler options
 set(CMAKE_CXX_STANDARD 20) # > Set cmake Cxx standard to 11/14/17/20
