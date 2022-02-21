@@ -15,7 +15,7 @@ fi
 ### START ###
 cd ..
 mkdir -p build.ninja && cd build.ninja &&
-    cmake -DCMAKE_BUILD_TYPE=Debug .. -G Ninja &&
+    conan install .. && cmake -DCMAKE_BUILD_TYPE=Debug .. -G Ninja &&
     ninja
 #clear
 #echo -e "\nTest Results..."

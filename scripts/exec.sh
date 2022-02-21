@@ -10,8 +10,9 @@ echo -e $CMAKE_VERSION
 echo -e $GCC_VERSION
 mkdir -p build.gcc && cd build.gcc &&
     CXX=g++ CC=gcc
-cmake -DCMAKE_BUILD_TYPE=Debug .. && #-DOPTION=ON(value) set submodule options
-    make -j4                         # make VERBOSE= 1 for detailed log
+conan install .. &&
+    cmake -DCMAKE_BUILD_TYPE=Debug .. && #-DOPTION=ON(value) set submodule options
+    make -j4                             # make VERBOSE= 1 for detailed log
 
 #clear
 #echo -e "\nTest Results..."
