@@ -19,5 +19,5 @@ conan install .. &&
 #ctest
 #./tests
 echo -e "\nOutput..."
-./BoostStateMachine
+./bin/BoostStateMachine
 ### END ###

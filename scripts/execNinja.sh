@@ -22,5 +22,5 @@ mkdir -p build.ninja && cd build.ninja &&
 #ctest
 #./tests
 echo -e "\nOutput..."
-./BoostStateMachine
+./bin/BoostStateMachine
 ### END ###

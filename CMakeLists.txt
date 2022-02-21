@@ -22,29 +22,32 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Include modular cmake files ## For Catch2 Test
 if(CATCH_TEST)
-  include(scripts/cmake/catch2Test.cmake)
+  include(${CMAKE_SOURCE_DIR}/scripts/cmake/catch2Test.cmake)
 endif()
 
 # For Update Submodule
 if(UPDATE_SUBMODULE)
-  include(scripts/cmake/updateSubmodule.cmake)
+  include(${CMAKE_SOURCE_DIR}/scripts/cmake/updateSubmodule.cmake)
 endif()
 
 # For Logging Native dependent packages
 if(NAT_PCKG)
-  include(scripts/cmake/nativePckg.cmake)
+  include(${CMAKE_SOURCE_DIR}/scripts/cmake/nativePckg.cmake)
 endif()
 
 # For Logging 3rd Party Dependent packages
 if(DEP_PCKG)
-  include(scripts/cmake/depPckg.cmake)
+  include(${CMAKE_SOURCE_DIR}/scripts/cmake/depPckg.cmake)
 endif()
 
-include(scripts/cmake/ccache.cmake)
+include(${CMAKE_SOURCE_DIR}/scripts/cmake/ccache.cmake)
 
 add_subdirectory(src)
 add_subdirectory(lib)
 # add_subdirectory(dep/json)
+
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
 
 if(MSVC)
   # warning level 4 and all warnings as errors

@@ -1,0 +1,11 @@
+[requires]
+nlohmann_json/3.9.1
+fmt/8.1.1
+spdlog/1.9.2
+
+[options]
+fmt:header_only=True
+spdlog:header_only=True
+
+[generators]
+cmake
