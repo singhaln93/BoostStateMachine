@@ -1,5 +1,11 @@
 # Boost State Machine
+Boost state machine implementation
+<!-- ABOUT THE PROJECT -->
+### Prerequisites
+// to be added soon
 
+### Installation
+// to be added soon
 ### Folder structure
     .
     ├── dep/                        # dependencies
@@ -25,7 +31,11 @@ Use short lowercase names at least for the top-level files and folders except `L
 ```bash
 tree -L 2
 ```
-For more examples, please refer to the [Doxygen documentation](https://neeraj2k18.github.io/BoostStateMachine/docs/doxygen-html/index.html) and for [Code coverage](https://neeraj2k18.github.io/BoostStateMachine/docs/gcov-html/index.html) 
+For more examples, please refer to the [Doxygen documentation](https://neeraj2k18.github.io/BoostStateMachine/docs/doxygen-html/index.html), [plantuml diagrams](uml/out/) and for [Code coverage](https://neeraj2k18.github.io/BoostStateMachine/docs/gcov-html/index.html) 
+
+<!-- ROADMAP -->
+## Roadmap
+See the [open issues](https://github.com/Neeraj2K18/BoostStateMachine/issues) for a list of proposed features (and known issues).
 
 <!--Change and Release Log -->
 ### Change Log
