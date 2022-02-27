@@ -1,3 +1,9 @@
+<a href="https://github.com/Neeraj2K18/BoostStateMachine/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/Neeraj2K18/BoostStateMachine"></a>
+<a href="https://github.com/Neeraj2K18/BoostStateMachine/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Neeraj2K18/BoostStateMachine"></a>
+<a href="https://github.com/Neeraj2K18/BoostStateMachine/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Neeraj2K18/BoostStateMachine"></a>
+[![CMake](https://github.com/Neeraj2K18/BoostStateMachine/actions/workflows/cmake.yml/badge.svg?branch=main)](https://github.com/Neeraj2K18/BoostStateMachine/actions/workflows/cmake.yml)
+[![pages-build-deployment](https://github.com/Neeraj2K18/BoostStateMachine/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/Neeraj2K18/BoostStateMachine/actions/workflows/pages/pages-build-deployment)
+---
 # Boost State Machine
 Boost state machine implementation
 <!-- ABOUT THE PROJECT -->
@@ -43,10 +49,6 @@ See the [open issues](https://github.com/Neeraj2K18/BoostStateMachine/issues) fo
 
 ### Release Log
 [Release log](https://github.com/Neeraj2K18/BoostStateMachine/releases) can be viewed here.
-
-<!-- LICENSE -->
-### License
-Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License. See [LICENSE](LICENSE) for more information.
 
 <!--Acknowledgements -->
 ### Acknowledgements
