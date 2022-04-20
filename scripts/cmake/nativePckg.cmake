@@ -1,3 +1,6 @@
+# Copyright © 2021  Neeraj Singhal
+# All rights reserved
+
 find_program(CLANG_TOOL NAMES clang++-HEAD clang++-14 clang++-13 clang++-12
                               clang++-11 clang++)
 execute_process(

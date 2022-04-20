@@ -1,3 +1,6 @@
+# Copyright © 2021  Neeraj Singhal
+# All rights reserved
+
 cmake_minimum_required(VERSION 3.22)
 
 # CMAKE_VERSION <major>.<minor>.<date>(YYMMDD) or <patch>
@@ -8,12 +11,24 @@ project(
 message("-- PROJECT = ${CMAKE_PROJECT_NAME} v${CMAKE_PROJECT_VERSION}")
 
 # Set Options/FLAGS
+set(BUILD_TYPE "Debug" CACHE STRING "Build Type" )
+set_property(CACHE BUILD_TYPE PROPERTY STRINGS Debug Release)
+
 option(NAT_PCKG "Display packages which are natively used for the project." OFF)
 option(DEP_PCKG "Display packages dependent packages used for the project." OFF)
 option(UPDATE_SUBMODULE "Update submodule dependent libs used for the project."
        OFF)
 option(CATCH_TEST "Turn ON/OFF catch test for the project." OFF)
 option(TRACE_LOGS "Turn ON/OFF trace logs" OFF)
+
+set(SANITIZER_USED "Debug" CACHE STRING "sanitizer used" )
+set_property(CACHE SANITIZER_USED PROPERTY STRINGS none address memory thread undefined)
+if(NOT "$SANITIZER_USED" STREQUAL "none")
+    string(TOUPPER ${SANITIZER_USED} SANITIZER_UPPERCASE)
+    add_compile_definitions(SANITIZE_${SANITIZER_USED})
+    add_compile_options(-fsanitize=${SANITIZER_USED} -fno-omit-frame-pointer)
+    link_libraries(-fsanitize=${SANITIZER_USED})
+endif()
 
 # Set the compiler options
 set(CMAKE_CXX_STANDARD 20) # > Set cmake Cxx standard to 11/14/17/20
@@ -42,44 +57,30 @@ endif()
 
 include(${CMAKE_SOURCE_DIR}/scripts/cmake/ccache.cmake)
 
+# set restrictive compilation warnings
+include(scripts/cmake/compilerWarnings.cmake)
+set_warnings()
+
 add_subdirectory(src)
 add_subdirectory(lib)
-# add_subdirectory(dep/json)
+#add_subdirectory(dep/json)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
-
-if(MSVC)
-  # warning level 4 and all warnings as errors
-  add_compile_options(/W4 /WX)
-else()
-  # lots of warnings and all warnings as errors
-  add_compile_options(
-    -Wall
-    -Wextra
-    -Wshadow
-    -Wunused
-    -Wpedantic
-    -Wconversion
-    -Werror)
-endif()
 
 # create main executable file
 add_executable(${PROJECT_NAME} src lib)
 
 # Used to correct the include header name
 target_include_directories(
-  ${PROJECT_NAME}
-  PUBLIC lib
-  PUBLIC dep/json/include)
+  ${PROJECT_NAME} PUBLIC lib #dep/json/include
+)
 
 target_link_directories(${PROJECT_NAME} PRIVATE lib/)
 
 target_link_libraries(
   ${PROJECT_NAME}
-  PRIVATE src
-  PRIVATE lib
-  # PRIVATE nlohmann_json::nlohmann_json
+  PRIVATE src lib #nlohmann_json::nlohmann_json
 )
 
 # For making installation files for the Project run "$cpack" in build directory

@@ -1,3 +1,6 @@
+# Copyright © 2021  Neeraj Singhal
+# All rights reserved
+
 # Download all the Submodules
 find_package(Git QUIET)
 if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")

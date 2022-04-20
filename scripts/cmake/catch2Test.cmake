@@ -1,3 +1,6 @@
+# Copyright © 2021  Neeraj Singhal
+# All rights reserved
+
 # find_package(Catch2 REQUIRED)
 
 # # file(GLOB_RECURSE TEST_SOURCES "test/*.cpp") add_test(NAME TEST_LIB_ADD

@@ -1,3 +1,6 @@
+# Copyright © 2021  Neeraj Singhal
+# All rights reserved
+
 # Find packages- dependent or 3rd party libraries
 if(NOT TARGET Catch2)
   find_package(Catch2 REQUIRED)

@@ -1,3 +1,6 @@
+# Copyright © 2021  Neeraj Singhal
+# All rights reserved
+
 find_program(CCACHE ccache)
 if(CCACHE)
   message("-- using ccache")
