@@ -21,7 +21,7 @@ option(UPDATE_SUBMODULE "Update submodule dependent libs used for the project."
 option(CATCH_TEST "Turn ON/OFF catch test for the project." OFF)
 option(TRACE_LOGS "Turn ON/OFF trace logs" OFF)
 
-set(SANITIZER_USED "Debug" CACHE STRING "sanitizer used" )
+set(SANITIZER_USED "none" CACHE STRING "sanitizer used" )
 set_property(CACHE SANITIZER_USED PROPERTY STRINGS none address memory thread undefined)
 if(NOT "$SANITIZER_USED" STREQUAL "none")
     string(TOUPPER ${SANITIZER_USED} SANITIZER_UPPERCASE)
